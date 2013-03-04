@@ -9,9 +9,13 @@
  */
  
 /**
- * carregando arquivo de configuração.
+ * carregando configurações
  */
- require '../config.php';
+ require '../../config/settings.php';
+/**
+ * Carregando banco de dados.
+ */
+ require '../../'.DIR_DB.'/pdo.php';;
  
 /**
  * Carregando modelo login
@@ -39,3 +43,17 @@
 	}
 
  }
+
+ $login = 'vagner.cantuares@gmail.com';
+ $password = 12345;
+
+ $login_controller = new LoginController(
+ 	array(
+ 		'login' => $login,
+ 		'password' => $password,
+		'database' => $dbh,
+		'hash_password' => ADMIN_SECURITY_HASH
+	)
+ );
+
+$login_controller->authenticate();
