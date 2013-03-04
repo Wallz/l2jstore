@@ -2,7 +2,7 @@
 /**
  * INDEX principal do projeto
  * 
- * Abaixo será inicializado todas as classes e funções para o
+ * Abaixo será inicializado as todas as classes e funções para o
  * perfeito funcionamento do sistema.
  * 
  * @since 03/03/2013
