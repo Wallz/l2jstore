@@ -19,7 +19,7 @@
  require '../../includes/classes/database/pdo.php';
 
 /**
- * Carregando modelo login
+ * Carregando modelo authenticate
  */
  require '../model/authenticate_model.php';
 

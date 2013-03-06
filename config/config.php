@@ -27,7 +27,7 @@
  */
  
  # Hash para codificação
- $config['l2jstore']['admin_security_hash']	=	'a1yaYhaPFlah59151HgxyU27';
+ $config['l2jstore']['admin_security_hash']	= 'a1yaYhaPFlah59151HgxyU27';
 
 /**
  * Carregando configurações do banco de dados.
