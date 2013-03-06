@@ -12,5 +12,3 @@
  $config['database']['password']	=	'';
  $config['database']['dbname']		=	'l2jdb';
 
- # Carregando classe PDO.
- require 'includes/classes/database/pdo.php';

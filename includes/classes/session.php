@@ -7,7 +7,7 @@
  * @since 04/03/2013
  * @author Vagner V. B. Cantuares <vagner.cantuares@gmail.com>
  */
- 
+
  Class Session {
 
 	public function _init()

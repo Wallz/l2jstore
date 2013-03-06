@@ -8,15 +8,7 @@
  */
  require 'config/config.php';
 
- # Carregando Clasess, Functions e Helpers.
- $load = array(
- 	'classes' => array('session')
- );
- 
- foreach ($load as $type => $files)
- {
- 	foreach ($files as $file)
- 	{
-		require 'includes/'.$file.'.php';
-	}
- }
+/**
+ * Carrega todos os arquivos da pasta includes definido no load.
+ */
+ require 'includes/load.php';
