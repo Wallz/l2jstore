@@ -1,0 +1,95 @@
+div#header {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    background-color: #383434;
+    height: 32px;   
+}
+
+div#nav {
+    margin: 0 auto;
+    width: 980px;
+    margin-top: -4px;
+    position: relative;
+    left: -25px; 
+}
+
+div#nav ul {
+    
+}
+
+div#nav li {
+    float: left;
+    padding: 5px 20px 5px 20px;
+    border-right: solid 1px #2a2828;
+    margin-top: -6px;
+}
+
+div#nav li:hover {
+    background-color: #2a2828;
+}
+
+div#nav li.active {
+    background-color: #2a2828;
+}
+
+div#nav a {
+    color: #FFF;
+    font-family: 'Sintony', sans-serif;
+    font-size: 12px;
+}
+
+div#nav ul li i {
+    color: #FFF;
+}
+
+div#nav li:hover > ul {
+    display: block;
+    position: absolute;
+    z-index: 1;   
+}
+
+div#nav li ul li {
+    position: relative;
+    top: 5px;
+    clear: both;
+    background-color: #2a2828;
+    margin-left: -46px;
+    margin-top: 0px;
+    border-top: solid 1px #302e2e;
+    min-width: 150px;
+}
+
+div#nav li ul li:hover {
+    background-color: #232121;   
+}
+
+div#nav ul li ul {
+    display: none;   
+}
+
+.botao {
+    padding: 5px 10px 5px 10px;
+   background-color: #e6e6e6;
+   border: solid 1px #aaaaaa;
+   color: #383434;
+   font-size: 13px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;    
+}
+
+.botao:hover {
+    color: #272525;
+    background-color: #edecec;
+}
+
+div#footer {
+    margin: 0 auto;
+    width: 980px;   
+}
+
+div#footer p {
+    font-family: 'Sintony', sans-serif;
+    font-size: 12px
+}
