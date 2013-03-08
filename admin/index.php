@@ -30,7 +30,9 @@
  # Carregando classe PDO.
  require '../includes/classes/database/pdo.php';
  
- if($session->_get_session('admin'))
+ $page = isset($_GET['page']) ? $_GET['page'] : null;
+ 
+ if($session->_get_session('isLoggedIn'))
  {
 	include 'admin_theme/index.php';
  } else {

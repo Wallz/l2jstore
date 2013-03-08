@@ -34,7 +34,7 @@
         <link rel="stylesheet" type="text/css" href="admin_theme/css/login.css" />
         
         <link href='http://fonts.googleapis.com/css?family=Sintony' rel='stylesheet' type='text/css'>
-        
+
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -45,7 +45,7 @@
         	<div id="nav">
         		<ul>
         			<li class="active">
-        				<a href="#">Home</a>
+        				<a href="login.php">Home</a>
         			</li>
         		</ul>
         	</div>
@@ -58,11 +58,11 @@
         		<form>
 					<fieldset>
 						<legend>L2JStore - Painel administrativo</legend>
-							<div class="control-group error">
-							  <label class="control-label" for="login">Entre com seu E-mail</label>
+							<div class="control-group">
+							  <label class="control-label" for="email">Entre com seu E-mail</label>
 							  <div class="controls input-prepend">
 							  	<span class="add-on"><i class="icon-envelope"></i></span>
-							    <input type="text" id="login">
+							    <input type="text" id="email" name="email">
 							  </div>
 							</div>
 							
@@ -70,15 +70,16 @@
 							  <label class="control-label" for="password">Entre com sua senha</label>
 							  <div class="controls input-prepend">
 							  	<span class="add-on"><i class="icon-key"></i></span>
-							    <input type="text" id="password">
+							    <input type="password" id="password" name="password">
 							  </div>
 							</div>
 							
 							<label></label>
-							<a class="botao" href="#"><i class="icon-ok"></i> Fazer login</a>
+							<a class="botao login" href="#"><i class="icon-ok"></i> Fazer login</a>
 					</fieldset>
         		</form>
        			<hr />
+	        	<div class="alert"></div>
         	</div>
         </div>
         
@@ -90,8 +91,8 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="admin_theme/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="admin_theme/js/plugins.js"></script>
+        <script src="admin_theme/js/main.js"></script>
         
         <!-- Bootstrap -->
         <script type="text/javascript" src="admin_theme/_resources/bootstrap/js/bootstrap.min.js"></script>

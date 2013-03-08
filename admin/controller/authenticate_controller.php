@@ -26,7 +26,8 @@
 /**
  * Carregando arquivo de tradução.
  */
- require '../../includes/languages/'.$config['l2jstore']['language'].'/admin/authenticate.php';
+ require '../languages/'.$config['l2jstore']['language'].'/authenticate.php';
+ require '../languages/'.$config['l2jstore']['language'].'/validations.php';
 
  Class AuthenticateController extends AuthenticateModel {
 
@@ -51,19 +52,54 @@
 	}
 
  }
+ 
+///////////////////////////////////////////////
 
- $login = 'vagner.cantuares@gmail.com';
- $password = 12345;
+# Incluindo arquivo de validação.
+require '../../includes/functions/validations.php';
 
- $auth_controller = new AuthenticateController(
- 	array(
- 		'login' => $login,
- 		'password' => $password,
-		'database' => $dbh,
-		'lang' => $lang['authenticate'],
-		'session' => $session,
-		'hash_password' => $config['l2jstore']['admin_security_hash']
-	)
- );
+# Setando traduções
 
-echo $auth_controller->login();
+
+#setando as validações.
+
+$validacoes = array(
+	'email' => array(
+		'not_empty' => array(
+			'mensagem' => $lang['text_email_empty']
+		)
+	),
+	'password' => array(
+		'not_empty' => array(
+			'mensagem' => $lang['text_password_empty']
+		)
+	),
+);
+
+if($_POST)
+{
+	if(validate($validacoes, $_POST))
+	{
+		echo validate($validacoes, $_POST);
+	}
+	
+	if(!validate($validacoes, $_POST))
+	{
+		$login = $_POST['email'];
+		$password = $_POST['password'];
+
+		 $auth_controller = new AuthenticateController(
+		 	array(
+		 		'login' => $login,
+		 		'password' => $password,
+				'database' => $dbh,
+				'lang' => $lang['authenticate'],
+				'session' => $session,
+				'hash_password' => $config['l2jstore']['admin_security_hash']
+			)
+		 );
+
+		 echo $auth_controller->login();
+	}
+
+}

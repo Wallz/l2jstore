@@ -21,7 +21,7 @@
 	public function login()
 	{
 		try{
-			$sth = $this->database->prepare("SELECT id, email, `password` FROM store_users WHERE email = ? AND `password` = ?");
+			$sth = $this->database->prepare("SELECT id, email FROM store_users WHERE email = ? AND `password` = ?");
 	
 			$sth->execute(array($this->login, $this->_hash_password($this->password)));
 	
@@ -31,15 +31,16 @@
 			{
 				throw new Exception($this->lang['user_wrong'], 1);
 			}
-			
-			$this->session->_session_register('admin', $result);
 
-			$this->json['message'] = $this->lang['user_authenticated'];
+			$this->session->_session_register('isLoggedIn', $result);
+
+			$this->json['mensagem'] = $this->lang['user_authenticated'];
 
 			return json_encode($this->json);
 
 		} catch(Exception $e) {
-			$this->json['message'] = $e->getMessage();
+			$this->json['error'] = 1;
+			$this->json['mensagem'] = $e->getMessage();
 			return json_encode($this->json);
 		}
 
