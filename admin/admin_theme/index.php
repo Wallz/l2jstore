@@ -14,7 +14,7 @@
 
         <link rel="stylesheet" href="admin_theme/css/normalize.css">
         <link rel="stylesheet" href="admin_theme/css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="admin_theme/js/vendor/modernizr-2.6.2.min.js"></script>
         
         <!-- Yahoo reset -->
         <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.8.1/build/cssreset/cssreset-min.css">
@@ -23,7 +23,7 @@
         <link rel="stylesheet" type="text/css" href="admin_theme/_resources/bootstrap/css/bootstrap.min.css" />
         
         <!-- jQuery UI -->
-        <link rel="stylesheet" type="text/css" href="admin_theme/_resources/jquery-ui/css/smoothness/jquery-ui-1.10.1.custom.min.css" />
+        <link rel="stylesheet" type="text/css" href="admin_theme/_resources/bootstrap-ui/css/custom-theme/jquery-ui-1.10.0.custom.css" />
         
         <!-- Font awesome -->
         <link rel="stylesheet" type="text/css" href="admin_theme/_resources/font-awesome/css/font-awesome-ie7.min.css" />
@@ -47,38 +47,68 @@
         			<li class="active">
         				<a href="#">Home</a>
         			</li>
-        			<li>
-        				<a href="#">Items</a>
-        			</li>
-       			<li>
-        			<i class="icon-caret-down"></i> <a href="#">Attributes</a>
-        			<ul>
-        				<li>
-        					<i class="icon-plus-sign"></i> <a href="#">New attribute</a>
-        				</li>
-        				<li>
-							<i class="icon-list"></i> <a href="#">List attribute</a>
-						</li>
-					</ul>
-				</li>
-       			<li>
-        			<i class="icon-caret-down"></i> <a href="#">Settings</a>
-        			<ul>
-        				<li>
-        					<i class="icon-cog"></i> <a href="#">My Store</a>
-        				</li>
-					</ul>
-				</li>
+	       			<li>
+	        			<i class="icon-caret-down"></i> <a href="#">Items</a>
+	        			<ul>
+	        				<li>
+	        					<i class="icon-plus-sign"></i> <a href="index.php?page=item/add">Novo item</a>
+	        				</li>
+	        				<li>
+								<i class="icon-list"></i> <a href="#">Lista de items</a>
+							</li>
+						</ul>
+					</li>
+	       			<li>
+	        			<i class="icon-caret-down"></i> <a href="#">Atributos</a>
+	        			<ul>
+	        				<li>
+	        					<i class="icon-plus-sign"></i> <a href="#">Novo atributo</a>
+	        				</li>
+	        				<li>
+								<i class="icon-list"></i> <a href="#">Lista de atributos</a>
+							</li>
+						</ul>
+					</li>
+	       			<li>
+	        			<i class="icon-caret-down"></i> <a href="#">Pagamentos</a>
+	        			<ul>
+	        				<li>
+	        					<i class="icon-money"></i> <a href="#">Pagseguro</a>
+	        				</li>
+						</ul>
+					</li>
+	       			<li>
+	        			<i class="icon-caret-down"></i> <a href="#">Settings</a>
+	        			<ul>
+	        				<li>
+	        					<i class="icon-cog"></i> <a href="#">My Store</a>
+	        				</li>
+						</ul>
+					</li>
         		</ul>
         	</div>
         </div>
         
         <div id="wrap">
- 
-        </div>
+        	<?php
+        	switch ($page) {
+				case $page == 'dashboard':
+					include 'dashboard.php';
+					break;
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+				case $page == 'item/add':
+					include 'item_add.php';
+					break;
+			}
+        	
+        	?>
+        </div>
+        
+        <div class="clearfix"></div>
+        
+        <div id="footer">
+        	<p>L2JStore © 2013 - Todos os direitos reservados</p>
+        </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="admin_theme/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
@@ -91,12 +121,13 @@
         <!-- jQuery UI -->
         <script type="text/javascript" src="admin_theme/_resources/jquery-ui/js/jquery-ui-1.10.1.custom.min.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
+        <?php if($page == 'item/add') : ?>
+        <!-- items JS -->
+        <script type="text/javascript" src="admin_theme/js/items.js"></script>
+         <script type="text/javascript" src="admin_theme/_resources/jquery-ui/ui/i18n/jquery.ui.datepicker-<?php echo $config['l2jstore']['language']; ?>.js"></script>
+        <script type="text/javascript">$(function(){ $.datepicker.setDefaults( $.datepicker.regional[ "<?php echo $config['l2jstore']['language']; ?>" ] ); })</script>
+        
+        <?php endif; ?>
+        
     </body>
 </html>

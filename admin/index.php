@@ -30,7 +30,7 @@
  # Carregando classe PDO.
  require '../includes/classes/database/pdo.php';
  
- $page = isset($_GET['page']) ? $_GET['page'] : null;
+ $page = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
  
  if($session->_get_session('isLoggedIn'))
  {

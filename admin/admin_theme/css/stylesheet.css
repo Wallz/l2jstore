@@ -3,7 +3,8 @@ div#header {
     left: 0px;
     right: 0px;
     background-color: #383434;
-    height: 32px;   
+    height: 32px;
+    margin-top: -50px; 
 }
 
 div#nav {
@@ -66,6 +67,17 @@ div#nav li ul li:hover {
 
 div#nav ul li ul {
     display: none;   
+}
+
+div#wrap {
+    width: 980px;
+    margin: 0 auto;
+    border: dashed 1px #cecece;
+    margin-top: 50px;
+    padding: 10px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
 }
 
 .botao {

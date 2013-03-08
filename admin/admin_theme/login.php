@@ -58,7 +58,7 @@
         		<form>
 					<fieldset>
 						<legend>L2JStore - Painel administrativo</legend>
-							<div class="control-group">
+							<div class="control-group c-g-e">
 							  <label class="control-label" for="email">Entre com seu E-mail</label>
 							  <div class="controls input-prepend">
 							  	<span class="add-on"><i class="icon-envelope"></i></span>
@@ -66,7 +66,7 @@
 							  </div>
 							</div>
 							
-							<div class="control-group">
+							<div class="control-group c-g-p">
 							  <label class="control-label" for="password">Entre com sua senha</label>
 							  <div class="controls input-prepend">
 							  	<span class="add-on"><i class="icon-key"></i></span>
