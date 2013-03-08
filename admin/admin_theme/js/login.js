@@ -3,9 +3,38 @@ $(document).ready(function(){
 		function()
 		{
 			///////////////////////////////////////
+
+			// Faz a requisição para autenticar o usuário.
 			$('.login').click(
 				function()
 				{
+					var email = $('input[name=email]');
+					var password = $('input[name=password]');
+					
+					if(!email.val())
+					{
+						$('.c-g-e').addClass('error');
+					}
+					
+					email.focus(
+						function()
+						{
+							$('.c-g-e').removeClass('error');
+						}
+					)
+					
+					if(!password.val())
+					{
+						$('.c-g-p').addClass('error');
+					}
+					
+					password.focus(
+						function()
+						{
+							$('.c-g-p').removeClass('error');
+						}
+					)
+					
 					$.ajax(
 						{
 							url: 'controller/authenticate_controller.php',
@@ -20,7 +49,6 @@ $(document).ready(function(){
 					done(
 						function(response)
 						{
-							console.log(response);
 							if(response.error != 1)
 							{
 								$('.alert').empty().removeClass('alert-error').addClass('alert-success').html(response.mensagem);
